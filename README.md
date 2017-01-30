@@ -30,7 +30,7 @@ And then go to [http://localhost:9000/](http://localhost:9000/)
 
 # References
 
-- [create-react-pwa](https://github.com/jeffposnick/create-react-pwa)
+- [create-react-app](https://github.com/facebookincubator/create-react-app)
 
 - [create-react-pwa](https://github.com/jeffposnick/create-react-pwa)
 
