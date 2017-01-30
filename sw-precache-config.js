@@ -4,6 +4,7 @@ module.exports = {
     staticFileGlobs: [
       'public/**.html',
       'public/**.json',
+      'public/**.jpg',
       'public/**.png',
       'public/**.css',
       'public/**.js',
@@ -31,6 +32,10 @@ module.exports = {
         handler: 'networkFirst'
       },
       {
+        urlPattern: /^http:\/\/localhost\:3000\//,
+        handler: 'networkFirst'
+      },
+      {
         urlPattern: /^http:\/\/localhost\:3000\/tnw/,
         handler: 'networkFirst'
       },
@@ -53,6 +58,7 @@ module.exports = {
       'build/static/**/!(*js*)',
       'build/static/**/!(*css*)',
       'build/*.png',
+      'build/*.jpg',
       'build/*.css',
       'build/*.js',
     ],
@@ -86,6 +92,10 @@ module.exports = {
             name: 'articles-cache'
           }
         }
+      },
+      {
+        urlPattern: /^http:\/\/localhost\:9000\//,
+        handler: 'networkFirst'
       },
       {
         urlPattern: /^http:\/\/localhost\:9000\/tnw/,

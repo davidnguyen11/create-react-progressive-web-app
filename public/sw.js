@@ -255,6 +255,7 @@ self.addEventListener('fetch', function(event) {
 toolbox.router.get(/^https:\/\/newsapi\.org\/v1/, toolbox.networkFirst, {});
 toolbox.router.get(/\/articles\//, toolbox.fastest, {"cache":{"maxEntries":10,"name":"articles-cache"}});
 toolbox.router.get(/^http:\/\/localhost\:3000\/static\/js\/bundle.js/, toolbox.networkFirst, {});
+toolbox.router.get(/^http:\/\/localhost\:3000\//, toolbox.networkFirst, {});
 toolbox.router.get(/^http:\/\/localhost\:3000\/tnw/, toolbox.networkFirst, {});
 toolbox.router.get(/^http:\/\/localhost\:3000\/techcrunch/, toolbox.networkFirst, {});
 toolbox.router.get(/^http:\/\/localhost\:3000\/ars-technica/, toolbox.networkFirst, {});
