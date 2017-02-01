@@ -4,6 +4,8 @@ This is a demo of PWA (Progressive Web App) based on [react-create-app](https://
 
 # Development
 
+This project I have included: redux, reactjs, redux-saga, react-router & material-ui.
+
 cd to directory contains ```package.json``` and run commands below:
 ```
 npm i
@@ -14,6 +16,13 @@ npm start
 ```
 
 And then go to [http://localhost:3000/](http://localhost:3000/)
+
+### Learn more
+
+ - [redux](https://github.com/reactjs/redux)
+ - [redux-saga](https://github.com/redux-saga/redux-saga)
+ - [react-router](https://github.com/ReactTraining/react-router)
+ - [material-ui](http://www.material-ui.com/#/)
 
 # Production
 
