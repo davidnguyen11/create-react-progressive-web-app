@@ -8,7 +8,7 @@ const initialState = {
   fetching: true,
 };
 
-function tcReducer(state = initialState, action) {
+function newsReducer(state = initialState, action) {
   switch(action.type) {
     case FETCH_DATA_SUCCESS: {
       return {
@@ -24,4 +24,4 @@ function tcReducer(state = initialState, action) {
   }
 }
 
-export default tcReducer;
+export default newsReducer;

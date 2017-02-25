@@ -5,7 +5,7 @@ import { Grid } from 'react-bootstrap';
 import Snackbar from 'material-ui/Snackbar';
 
 import { Header } from 'components';
-import { menuItems, pwaMetas, linkPwaMetas } from 'utils/constants';
+import { menuItems, appleMetas, linkPwaMetas } from 'utils/constants';
 import './styles.css';
 
 const muStyles = {
@@ -20,24 +20,39 @@ class AppWrapper extends PureComponent {
     showSnackbar: false,
   };
 
-  handleRequestClose = () => {
-    this.setState({
-      showSnackbar: false,
-    });
+  componentWillMount() {
+    if (!window.Offline.check()) {
+      this.setState({
+        online: false,
+        showSnackbar: true,
+      });
+    }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     window.Offline.on('down', () => {
       this.setState({
         online: false,
         showSnackbar: true,
       });
     });
+    window.Offline.on('up', () => {
+      this.setState({
+        online: true,
+        showSnackbar: true,
+      });
+    });
+  }
+
+  handleRequestClose = () => {
+    this.setState({
+      showSnackbar: false,
+    });
   }
 
   renderOffOnlineSnackbar() {
     const { online, showSnackbar } = this.state;
-    const msg = !online && 'You are now offline';
+    const msg = !online ? 'Offline' : 'Online';
     return (
       <Snackbar
         contentStyle={muStyles.contentStyle}
@@ -49,22 +64,14 @@ class AppWrapper extends PureComponent {
     );
   }
 
-  renderLoading() {
-    const { fetching } = this.props;
-    return (
-      fetching &&
-        <Paper style={muStyles} zDepth={1} rounded={false}>
-          <CircularProgress />
-        </Paper>
-    );
-  }
-
   render() {
-    const metas = [...pwaMetas];
+    const metas = [...appleMetas];
     const links = [...linkPwaMetas];
+    const { online } = this.state;
+    const className = !online ? 'main-container offline' : 'main-container';
     return (
       <MuiThemeProvider>
-        <div>
+        <div className={className}>
           <Helmet meta={metas} link={links} />
           <Header menuItems={menuItems} />
           <Grid>

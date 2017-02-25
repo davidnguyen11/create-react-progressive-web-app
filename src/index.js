@@ -1,10 +1,9 @@
 import 'babel-polyfill';
+require('offline-js');
 
 import 'sanitize.css/sanitize.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-const Offline = require( 'offline-js');
-window.Offline = Offline;
 
 import React from 'react';
 import { applyMiddleware, createStore } from 'redux';
@@ -30,6 +29,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 const routerProps = {
   history,
   render: applyRouterMiddleware(useScroll()),
+  store,
 };
 
 ReactDOM.render(

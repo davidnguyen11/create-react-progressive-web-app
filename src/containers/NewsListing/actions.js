@@ -6,8 +6,8 @@ import {
   FETCH_DATA_FAIL,
 } from './constants';
 
-export function fetchData() {
-  const requestURL = `${configs.apiUrl}/articles?source=the-next-web&apiKey=${configs.newsApiKey}`;
+export function fetchData(source) {
+  const requestURL = `${configs.apiUrl}/articles?source=${source}&apiKey=${configs.newsApiKey}`;
   return (dispatch) => {
     return request(requestURL).then(
       response => {

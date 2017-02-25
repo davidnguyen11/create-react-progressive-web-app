@@ -3,11 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
 
-import {
-  fetchData
-} from './actions';
-
-import { CardComponent } from 'components';
+import { CardComponent, NoInternet } from 'components';
 import Paper from 'material-ui/Paper';
 
 const muStyles = {
@@ -16,11 +12,7 @@ const muStyles = {
   marginBottom: 20,
 };
 
-class ArsTechnica extends Component {
-  componentWillMount() {
-    this.props.fetchData();
-  }
-
+class NewsListing extends Component {
   renderLoading() {
     const { fetching } = this.props;
     return (
@@ -33,9 +25,15 @@ class ArsTechnica extends Component {
 
   render() {
     const { articles } = this.props;
+    let element = null;
+    if (!navigator.onLine) {
+      element = <NoInternet />
+    } else {
+      element = articles.map((item, index) => <CardComponent key={index} {...item} />);
+    }
     return (
       <div className="app">
-        {articles.map((item, index) => <CardComponent key={index} {...item} />)}
+        {element}
         {this.renderLoading()}
       </div>
     )
@@ -43,14 +41,14 @@ class ArsTechnica extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  atState: state.atReducer,
-  articles: state.atReducer.articles,
-  source: state.atReducer.source,
-  fetching: state.atReducer.fetching,
+  newsState: state.newsReducer,
+  articles: state.newsReducer.articles,
+  source: state.newsReducer.source,
+  fetching: state.newsReducer.fetching,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchData: () => dispatch(fetchData())
+  dispatch,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArsTechnica);
+export default connect(mapStateToProps, mapDispatchToProps)(NewsListing);

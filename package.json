@@ -15,6 +15,7 @@
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
+    "react-helmet": "^4.0.0",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.7",
@@ -23,13 +24,11 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
     "sanitize.css": "^4.1.0",
-    "sw-precache": "^4.3.0",
     "sw-toolbox": "^3.4.0",
     "whatwg-fetch": "^2.0.2"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development NODE_PATH='./src' react-scripts start",
-    "postbuild": "cross-env NODE_ENV=production sw-precache --config=sw-precache-config.js",
     "build": "cross-env NODE_ENV=production NODE_PATH='./src' react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

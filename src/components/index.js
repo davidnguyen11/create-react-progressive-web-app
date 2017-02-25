@@ -1,9 +1,9 @@
 import Header from './Header';
-import AppWrapper from './AppWrapper';
 import CardComponent from './CardComponent';
+import NoInternet from './NoInternet';
 
 export {
-  AppWrapper,
   Header,
   CardComponent,
+  NoInternet,
 };
