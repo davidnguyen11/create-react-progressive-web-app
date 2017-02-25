@@ -17,7 +17,7 @@ const muStyles = {
 };
 
 class TheNextWeb extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchData();
   }
 

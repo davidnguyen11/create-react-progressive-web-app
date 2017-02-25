@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -24,7 +25,7 @@ class Header extends Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          {menuItems.map((item, index) => <a key={index} href={item.url}><MenuItem>{item.title}</MenuItem></a>)}
+          {menuItems.map((item, index) => <Link key={index} href={item.url}><MenuItem>{item.title}</MenuItem></Link>)}
         </Drawer>
       </section>
     )

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Router, Route } from 'react-router';
 
+import AppWrapper from './components/AppWrapper';
 import TheNextWeb from './containers/TheNextWeb';
 import TechCrunch from './containers/TechCrunch';
 import ArsTechnica from './containers/ArsTechnica';
@@ -9,7 +10,7 @@ import NotFound from './containers/NotFound';
 
 const Routes = (props) => (
   <Router {...props}>
-    <Route component={props.rootComponent}>
+    <Route component={AppWrapper}>
       <Route path="/" component={HomePage} />
       <Route path="/tnw" component={TheNextWeb} />
       <Route path="/techcrunch" component={TechCrunch} />

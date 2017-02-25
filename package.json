@@ -11,6 +11,7 @@
     "classnames": "^2.2.5",
     "cross-env": "^3.1.4",
     "material-ui": "^0.16.7",
+    "offline-js": "^0.7.18",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
@@ -20,14 +21,13 @@
     "react-router-scroll": "^0.4.1",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
-    "redux-saga": "^0.14.3",
+    "redux-thunk": "^2.2.0",
     "sanitize.css": "^4.1.0",
     "sw-precache": "^4.3.0",
     "sw-toolbox": "^3.4.0",
     "whatwg-fetch": "^2.0.2"
   },
   "scripts": {
-    "prestart": "cross-env NODE_ENV=development sw-precache --config=sw-precache-config.js",
     "start": "cross-env NODE_ENV=development NODE_PATH='./src' react-scripts start",
     "postbuild": "cross-env NODE_ENV=production sw-precache --config=sw-precache-config.js",
     "build": "cross-env NODE_ENV=production NODE_PATH='./src' react-scripts build",
