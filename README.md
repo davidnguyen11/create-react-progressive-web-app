@@ -73,10 +73,12 @@ And then go to [http://localhost:9000/](http://localhost:9000/)
 
 ## Demo 2
 Color change when web app is in offline mode
+
 ![img](docs/demo/demo2.gif)
 
 ## Demo 3
 Touch icon in `Add to home screen` mode
+
 ![img](docs/demo/demo3.gif)
 
 # References
