@@ -4,7 +4,7 @@ This is a demo of PWA (Progressive Web App) based on [react-create-app](https://
 
 # Development
 
-This project I have included: redux, reactjs, redux-thunk, react-router & material-ui.
+This project I have included: redux, reactjs, redux-saga, react-router & material-ui.
 
 cd to directory contains ```package.json``` and run commands below:
 ```
@@ -20,14 +20,14 @@ And then go to [http://localhost:3000/](http://localhost:3000/)
 ## Learn more
 
  - [redux](https://github.com/reactjs/redux)
- - [redux-thunk](https://github.com/gaearon/redux-thunk)
+ - [redux-saga](https://github.com/redux-saga/redux-saga)
  - [react-router](https://github.com/ReactTraining/react-router)
  - [material-ui](http://www.material-ui.com/#/)
  - [offline-js](http://github.hubspot.com/offline/docs/welcome/)
 
 ### Description
 
-- `redux & redux-thunk`: To handle data flow
+- `redux & redux-saga`: To handle data flow
 - `react-router`: To handle routing
 - `material-ui`: To handle UI
 - `offline-js`: To detect when user is in offline mode to display snackbar & change color of UI to gray color.
@@ -88,6 +88,8 @@ Touch icon in `Add to home screen` mode
 - [create-react-pwa](https://github.com/jeffposnick/create-react-pwa)
 
 - [sw-toolbox](https://github.com/GoogleChrome/sw-toolbox)
+
+- [redux-saga](https://redux-saga.github.io/redux-saga/docs/introduction/BeginnerTutorial.html)
 
 - [https://jakearchibald.com/2014/offline-cookbook/#network-only](https://jakearchibald.com/2014/offline-cookbook/#network-only)
 
