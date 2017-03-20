@@ -1,21 +1,15 @@
-import request from 'utils/request';
-import { configs } from 'utils/configs';
-import { normalizeData } from 'utils';
 import {
+  FETCH_DATA,
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAIL,
 } from './constants';
 
 export function fetchData(source) {
-  const requestURL = `${configs.apiUrl}/articles?source=${source}&apiKey=${configs.newsApiKey}`;
-  return (dispatch) => {
-    return request(requestURL).then(
-      response => {
-        response.articles = normalizeData(response.articles);
-        dispatch(fetchDataSuccess(response));
-      },
-      error => dispatch(fetchDataFail())
-    );
+  return {
+    type: FETCH_DATA,
+    payload: {
+      source,
+    }
   };
 }
 

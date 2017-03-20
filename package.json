@@ -22,7 +22,7 @@
     "react-router-scroll": "^0.4.1",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0",
+    "redux-saga": "^0.14.3",
     "sanitize.css": "^4.1.0",
     "sw-toolbox": "^3.4.0",
     "whatwg-fetch": "^2.0.2"

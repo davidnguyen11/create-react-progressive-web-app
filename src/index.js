@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import React from 'react';
 import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 import ReactDOM from 'react-dom';
 import { applyRouterMiddleware, browserHistory } from 'react-router';
 import { useScroll } from 'react-router-scroll';
@@ -17,19 +17,27 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 import reducer from './reducers';
+import sagas from './sagas';
 import Routes from './routes';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
   reducer,
-  applyMiddleware(thunk),
+  applyMiddleware(sagaMiddleware),
 );
 
+// Begin our Index Saga
+sagaMiddleware.run(sagas);
+
+// sync history
 const history = syncHistoryWithStore(browserHistory, store);
 
 const routerProps = {
   history,
   render: applyRouterMiddleware(useScroll()),
   store,
+  sagas,
 };
 
 ReactDOM.render(
