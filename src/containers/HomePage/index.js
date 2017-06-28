@@ -8,7 +8,7 @@ function HomePage() {
     <div className="homePage">
       {menuItems.map((item, index) =>
         <Link href={item.url} key={index}>
-          <img src={item.logo} role="presentation"/>
+          <img src={item.logo} role="presentation" alt={item.title} />
         </Link>
       )}
     </div>

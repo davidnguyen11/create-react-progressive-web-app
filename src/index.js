@@ -1,9 +1,13 @@
 import 'babel-polyfill';
-require('offline-js');
+import 'offline-js';
 
 import 'sanitize.css/sanitize.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
+
+import reducer from './reducers';
+import sagas from './sagas';
+import Routes from './routes';
 
 import React from 'react';
 import { applyMiddleware, createStore } from 'redux';
@@ -15,10 +19,6 @@ import { syncHistoryWithStore} from 'react-router-redux';
 import { Provider } from 'react-redux'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-
-import reducer from './reducers';
-import sagas from './sagas';
-import Routes from './routes';
 
 const sagaMiddleware = createSagaMiddleware();
 

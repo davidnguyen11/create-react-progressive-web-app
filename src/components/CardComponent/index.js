@@ -13,7 +13,7 @@ function CardComponent(props) {
       />
 
       <CardMedia overlay={<CardTitle title={title} subtitle={author} />}>
-        {urlToImage && <img src={urlToImage} role="presentation" />}
+        {urlToImage && <img src={urlToImage} role="presentation" alt={title} />}
       </CardMedia>
 
       <CardTitle title={title} subtitle={publishedDate} />
